@@ -93,3 +93,21 @@ NUMEN_MCP_URL=http://192.168.1.10:8765/mcp python3 numen.py list_companions
 ## License
 
 MIT © EnSue Laboratories
+
+## Remote game (cross-machine)
+
+When the game runs on a different machine than Claude Code (e.g. a Windows gaming PC), set
+`NUMEN_SSH_HOST` instead of `NUMEN_MINECRAFT_DIR`:
+
+```json
+"numen-chat": {
+  "command": "node",
+  "args": ["/path/to/numen-chat.js"],
+  "env": { "NUMEN_SSH_HOST": "user@gamingpc" }
+}
+```
+
+Copy `numen-tail.ps1` to the remote user's home first (`scp numen-tail.ps1 user@gamingpc:`).
+The channel then streams chat/inbox events over SSH (key auth required); it auto-reconnects
+if the link drops. Pair it with an `.mcp.json` `numen` entry pointing at the remote
+numen-mcp (`http://gamingpc:8765/mcp` + bearer token) for full cross-machine play.
