@@ -1,0 +1,25 @@
+{
+  "name": "numen-claude-channel",
+  "version": "0.1.0",
+  "description": "Claude Code channel that bridges in-game Minecraft chat (Numen mod) into a live Claude session",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EnSue-Laboratories/numen-claude-channel"
+  },
+  "bin": {
+    "numen-chat": "./numen-chat.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
