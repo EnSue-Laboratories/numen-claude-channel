@@ -1,5 +1,6 @@
 # Remote tail helper for numen-chat.js — runs ON the Windows game machine over SSH.
 # Emits "LOG|<line>" for game-log lines and "INBOX|<companion>|<jsonl>" for inbox events.
+[Console]::OutputEncoding = [Text.Encoding]::UTF8   # else non-ASCII (e.g. Chinese event text) mojibakes
 $base = "$env:APPDATA\PrismLauncher\instances\Numen\minecraft"
 $log  = "$base\logs\latest.log"
 $conv = "$base\config\numen\conversations"
